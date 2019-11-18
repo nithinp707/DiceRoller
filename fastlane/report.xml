@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.001621557">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: gradle" time="1.582436524">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: gradle" time="9.699048717">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
