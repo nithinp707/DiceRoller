@@ -30,6 +30,15 @@ android {
     dataBinding {
         enabled = true
     }
+    flavorDimensions "default"
+    productFlavors {
+        roomVersion
+        dev {
+            dimension "default"
+            versionName "cityBusDev_1"
+            versionCode 1
+        }
+    }
 }
 
 dependencies {
