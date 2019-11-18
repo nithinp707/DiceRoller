@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "159125261893",
+    "firebase_url": "https://dice-roller-8350e.firebaseio.com",
+    "project_id": "dice-roller-8350e",
+    "storage_bucket": "dice-roller-8350e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159125261893:android:7a49ecce6208337bd21d2c",
+        "android_client_info": {
+          "package_name": "com.example.android.diceroller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159125261893-6vgp46sv6k4v4gcc4jqcfnmtivunm384.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoezKQZXZVv9y-C75d_H6KAKe6-kbSCS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159125261893-6vgp46sv6k4v4gcc4jqcfnmtivunm384.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
