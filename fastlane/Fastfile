@@ -27,8 +27,7 @@ platform :android do
         firebase_app_distribution(
             app: "1:159125261893:android:7a49ecce6208337bd21d2c",
             testers: "mail.nithinp@gmail.com",
-            release_notes: "Lots of amazing new features to test out!",
-            firebase_cli_path: "/absolute/path/to/firebase/cli/binary"
+            release_notes: "Lots of amazing new features to test out!"
             )
   end
 end
