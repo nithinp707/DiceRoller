@@ -16,7 +16,7 @@ defaults: &defaults
       command: bundle update
   - run:
       name: Download Dependencies
-      command: cd DiceRoller;./gradlew androidDependencies
+      command: ./gradlew androidDependencies
   - save_cache:
       paths:
       - ~/.gradle
