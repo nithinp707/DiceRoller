@@ -18,7 +18,7 @@ default_platform(:android)
 platform :android do
 
   desc "Submit a new Beta Build to Crashlytics Beta"
-  lane :beta do
+  lane :dev do
         gradle(
           task: "assemble",
           flavor: "Dev",
