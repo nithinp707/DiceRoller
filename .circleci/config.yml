@@ -15,6 +15,9 @@ defaults: &defaults
   - run:
       name: Install fastlane
       command: bundle install
+   - run:
+      name: Update fastlane
+      command: bundle update --bundler
   - save_cache:
       paths:
       - ~/.gradle
