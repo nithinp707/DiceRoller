@@ -24,10 +24,13 @@ platform :android do
           flavor: "Dev",
           build_type: "Debug"
         )
+        firebasePath = sh("which firebase")
+        firebaseDirectory = sh("dirname #{firebasePath}")
         firebase_app_distribution(
             app: "1:159125261893:android:7a49ecce6208337bd21d2c",
             testers: "mail.nithinp@gmail.com",
-            release_notes: "Lots of amazing new features to test out!"
+            release_notes: "Lots of amazing new features to test out!",
+            firebase_cli_path: "#{firebaseDirectory}"
             )
   end
 end
