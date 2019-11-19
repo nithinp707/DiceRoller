@@ -24,7 +24,7 @@ platform :android do
           flavor: "Dev",
           build_type: "Debug"
         )
-        firebasePath = sh("which firebase")
+        firebasePath = sh("/usr/local/bin/firebase")
         firebaseDirectory = sh("dirname #{firebasePath}")
         firebase_app_distribution(
             app: "1:159125261893:android:7a49ecce6208337bd21d2c",
