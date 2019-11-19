@@ -7,8 +7,6 @@ defaults: &defaults
   - image: circleci/android:api-29
   environment:
     JVM_OPTS: -Xmx3200m
-    BUNDLER_VERSION: 2.0.1
-
   steps:
   - checkout
   - restore_cache:
@@ -16,6 +14,9 @@ defaults: &defaults
   - run:
       name: Install fastlane
       command: bundle update
+  - run:
+      name: Download Dependencies
+      command: cd DiceRoller;./gradlew androidDependencies
   - save_cache:
       paths:
       - ~/.gradle
