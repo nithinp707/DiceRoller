@@ -7,6 +7,7 @@ defaults: &defaults
   - image: circleci/android:api-28-alpha
   environment:
     JVM_OPTS: -Xmx3200m
+    BUNDLER_VERSION: 2.0.1
 
   steps:
   - checkout
@@ -14,10 +15,9 @@ defaults: &defaults
       key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
   - run:
       name: Install fastlane
-      command: bundle install
-  - run:
-      name: Update bundler
-      command: bundle update --bundler
+      command: echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+        source $BASH_ENV
+        bundle install
   - save_cache:
       paths:
       - ~/.gradle
@@ -37,9 +37,4 @@ workflows:
   deploy-internal-build:
     jobs:
     - deploy-internal:
-        filters:
-          tags:
-            only: /release.*/
-          branches:
-            ignore: /.*/
 
