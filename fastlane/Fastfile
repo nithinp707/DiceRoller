@@ -16,14 +16,9 @@
 default_platform(:android)
 
 platform :android do
-  desc "Runs all the tests"
-  lane :test do
-    gradle(task: "test")
-  end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
-    gradle(task:"clean")
         gradle(
           task: "assemble",
           flavor: "Dev",
@@ -35,13 +30,5 @@ platform :android do
             release_notes: "Lots of amazing new features to test out!",
             firebase_cli_path: "/absolute/path/to/firebase/cli/binary"
             )
-    # sh "your_script.sh"
-    # You can also use other beta testing services here
-  end
-
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store
   end
 end
