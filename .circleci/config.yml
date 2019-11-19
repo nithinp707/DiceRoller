@@ -14,12 +14,10 @@ defaults: &defaults
       key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
   - run:
       name: Install fastlane
-      command: gem update --system
-        gem uninstall bundler
-        rm /usr/local/bin/bundle
-        rm /usr/local/bin/bundler
-        gem install bundler
-        bundle install
+      command: bundle install
+  - run:
+      name: Update bundler
+      command: bundle update --bundler
   - save_cache:
       paths:
       - ~/.gradle
