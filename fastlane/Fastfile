@@ -22,8 +22,7 @@ platform :android do
         gradle(
           task: "assemble",
           flavor: "Dev",
-          build_type: "Debug",
-          project_dir: 'android/'
+          build_type: "Debug"
         )
         firebase_app_distribution(
             app: "1:159125261893:android:7a49ecce6208337bd21d2c",
