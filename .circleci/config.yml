@@ -16,7 +16,7 @@ defaults: &defaults
       command: bundle update
   - run:
       name: Install Firebase Tools
-      command: install firebase-tools
+      command: bundle exec firebase-tools
   - run:
       name: Check Firebase
       command: which firebase
