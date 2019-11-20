@@ -21,12 +21,4 @@ platform :android do
   lane :internal do
         gradle(task: 'clean')
   end
-
-  # You can define as many lanes as you want
-
-    after_all do |lane|
-    end
-
-    error do |lane, exception|
-    end
 end
