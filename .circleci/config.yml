@@ -16,7 +16,7 @@ defaults: &defaults
       command: bundle update
   - run:
       name: Install Firebase Tools
-      command: bundle exec firebase-tools
+      command: fastlane add_plugin firebase_app_distribution
   - run:
       name: Check Firebase
       command: which firebase
