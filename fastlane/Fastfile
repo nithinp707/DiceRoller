@@ -1,3 +1,4 @@
+opt_out_usage
 # This file contains the fastlane.tools configuration
 # You can find the documentation at https://docs.fastlane.tools
 #
@@ -17,14 +18,18 @@ default_platform(:android)
 
 platform :android do
 
-  desc "Submit a new Tester build to firebase app distribution.
-  lane :internal do
-        gradle(task: 'clean')
-            gradle(
-              task: 'assemble',
-              flavor: 'Dev',
-              build_type: 'Debug'
-            )
-            end
-  end
+   desc "Submit a new internal Build to Crashlytics Beta"
+    lane :internal do
+    gradle(task:"clean")
+      gradle(
+        task: "assemble",
+        flavor: "Dev",
+        build_type: "Debug"
+      )
+      end
+    # tag = "release-internal-v1.0.13"
+    # add_git_tag(tag: tag)
+    # push_to_git_remote
+    end
+
 end
