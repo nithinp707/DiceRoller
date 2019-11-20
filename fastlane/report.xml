@@ -5,12 +5,94 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.002488608">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000753933">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: gradle" time="4.240925655">
+      <testcase classname="fastlane.lanes" name="1: gradle" time="25.884517606">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: /usr/local/bin/firebase" time="1.221776246">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: dirname ]0;Firebase CLIUsage: firebase [options] [command]
+
+Options:
+  -V, --version                                             output the version number
+  -P, --project &lt;alias_or_project_id&gt;                       the Firebase project to use for this command
+  -j, --json                                                output JSON instead of text, also triggers non-interactive mode
+  --token &lt;token&gt;                                           supply an auth token for this command
+  --non-interactive                                         error out of the command instead of waiting for prompts
+  --interactive                                             force interactive shell treatment even when not detected
+  --debug                                                   print verbose debug output and keep a debug log file
+  -h, --help                                                output usage information
+
+Commands:
+  appdistribution:distribute [options] &lt;distribution-file&gt;  upload a distribution
+  apps:create [options] [platform] [displayName]            create a new Firebase app. [platform] can be IOS, ANDROID or WEB (case insensitive).
+  apps:list [platform]                                      list the registered apps of a Firebase project. Optionally filter apps by [platform]: IOS, ANDROID or WEB (case insensitive)
+  apps:sdkconfig [options] [platform] [appId]               print the Google Services config of a Firebase app. [platform] can be IOS, ANDROID or WEB (case insensitive)
+  auth:export [options] [dataFile]                          Export accounts from your Firebase project into a data file
+  auth:import [options] [dataFile]                          import users into your Firebase project from a data file(.csv or .json)
+  database:get [options] &lt;path&gt;                             fetch and print JSON data at the specified path
+  database:instances:create &lt;instanceName&gt;                  create a realtime database instance
+  database:instances:list                                   list realtime database instances
+  database:profile [options]                                profile the Realtime Database and generate a usage report
+  database:push [options] &lt;path&gt; [infile]                   add a new JSON object to a list of data in your Firebase
+  database:remove [options] &lt;path&gt;                          remove data from your Firebase at the specified path
+  database:set [options] &lt;path&gt; [infile]                    store JSON data at the specified path via STDIN, arg, or file
+  database:settings:get [options] &lt;path&gt;                    read the realtime database setting at path
+  database:settings:set [options] &lt;path&gt; &lt;value&gt;            set the realtime database setting at path.
+  database:update [options] &lt;path&gt; [infile]                 update some of the keys for the defined path in your Firebase
+  deploy [options]                                          deploy code and assets to your Firebase project
+  emulators:exec [options] &lt;script&gt;                         start the local Firebase emulators, run a test script, then shut down the emulators
+  emulators:start [options]                                 start the local Firebase emulators
+  experimental:functions:shell [options]                    launch full Node shell with emulated functions. (Alias for `firebase functions:shell.)
+  ext                                                       display information on how to use ext commands and extensions installed to your project
+  ext:configure [options] &lt;instanceId&gt;                      configure an existing extension instance
+  ext:info [options] &lt;extensionName&gt;                        display information about an extension by name (extensionName@x.y.z for a specific version)
+  ext:install [options] &lt;extensionName&gt;                     install an extension, given &lt;extensionName&gt; or &lt;extensionName@versionNumber&gt;
+  ext:list                                                  list all the extensions that are installed in your Firebase project
+  ext:uninstall [options] &lt;extensionInstanceId&gt;             uninstall an extension that is installed in your Firebase project by instance ID
+  ext:update &lt;instanceId&gt;                                   update an existing extension instance to the latest version
+  firestore:delete [options] [path]                         Delete data from Cloud Firestore.
+  firestore:indexes [options]                               List indexes in your project's Cloud Firestore database.
+  functions:config:clone [options]                          clone environment config from another project
+  functions:config:get [path]                               fetch environment config stored at the given path
+  functions:config:set [values...]                          set environment config with key=value syntax
+  functions:config:unset [keys...]                          unset environment config at the specified path(s)
+  functions:delete [options] [filters...]                   delete one or more Cloud Functions by name or group name.
+  functions:log [options]                                   read logs from deployed functions
+  functions:shell [options]                                 launch full Node shell with emulated functions
+  help [command]                                            display help information
+  hosting:disable [options]                                 stop serving web traffic to your Firebase Hosting site
+  init [feature]                                            setup a Firebase project in the current directory
+  list                                                      [DEPRECATED: use `projects:list`] list the Firebase projects you have access to
+  login [options]                                           log the CLI into Firebase
+  login:ci [options]                                        generate an access token for use in non-interactive environments
+  logout                                                    log the CLI out of Firebase
+  open [link]                                               quickly open a browser to relevant project resources
+  projects:addfirebase [projectId]                          add Firebase resources to a Google Cloud Platform project
+  projects:create [options] [projectId]                     create a new firebase project
+  projects:list                                             list all Firebase projects you have access to
+  serve [options]                                           start a local server for your static assets
+  setup:emulators:database                                  downloads the database emulator
+  setup:emulators:firestore                                 downloads the firestore emulator
+  setup:web                                                 [DEPRECATED: use `apps:sdkconfig web`] display this project's setup information for the Firebase JS SDK
+  target [type]                                             display configured deploy targets for the current project
+  target:apply &lt;type&gt; &lt;name&gt; &lt;resources...&gt;                 apply a deploy target to a resource
+  target:clear &lt;type&gt; &lt;target&gt;                              clear all resources from a named resource target
+  target:remove &lt;type&gt; &lt;resource&gt;                           remove a resource target
+  tools:migrate [options]                                   [DEPRECATED] ensure your firebase.json format is up to date
+  use [options] [alias_or_project_id]                       set an active Firebase project for your working directory
+" time="0.018217351">
+        
+          <failure message="/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/fast_file.rb:218:in `sh'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/fast_file.rb:212:in `sh'&#10;Fastfile:28:in `block (2 levels) in parsing_binding'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/lane_manager.rb:56:in `cruise_lane'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/commands_generator.rb:108:in `block (2 levels) in run'&#10;/var/lib/gems/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/var/lib/gems/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/command.rb:153:in `run'&#10;/var/lib/gems/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/runner.rb:476:in `run_active_command'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:76:in `run!'&#10;/var/lib/gems/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/delegates.rb:15:in `run!'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/commands_generator.rb:349:in `run'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/commands_generator.rb:41:in `start'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/fastlane/lib/fastlane/cli_tools_distributor.rb:119:in `take_off'&#10;/var/lib/gems/2.5.0/gems/fastlane-2.136.0/bin/fastlane:23:in `&lt;top (required)&gt;'&#10;/usr/local/bin/fastlane:23:in `load'&#10;/usr/local/bin/fastlane:23:in `&lt;main&gt;'&#10;&#10;Exit status of command 'dirname ]0;Firebase CLIUsage: firebase [options] [command]&#10;&#10;Options:&#10;  -V, --version                                             output the version number&#10;  -P, --project &lt;alias_or_project_id&gt;                       the Firebase project to use for this command&#10;  -j, --json                                                output JSON instead of text, also triggers non-interactive mode&#10;  --token &lt;token&gt;                                           supply an auth token for this command&#10;  --non-interactive                                         error out of the command instead of waiting for prompts&#10;  --interactive                                             force interactive shell treatment even when not detected&#10;  --debug                                                   print verbose debug output and keep a debug log file&#10;  -h, --help                                                output usage information&#10;&#10;Commands:&#10;  appdistribution:distribute [options] &lt;distribution-file&gt;  upload a distribution&#10;  apps:create [options] [platform] [displayName]            create a new Firebase app. [platform] can be IOS, ANDROID or WEB (case insensitive).&#10;  apps:list [platform]                                      list the registered apps of a Firebase project. Optionally filter apps by [platform]: IOS, ANDROID or WEB (case insensitive)&#10;  apps:sdkconfig [options] [platform] [appId]               print the Google Services config of a Firebase app. [platform] can be IOS, ANDROID or WEB (case insensitive)&#10;  auth:export [options] [dataFile]                          Export accounts from your Firebase project into a data file&#10;  auth:import [options] [dataFile]                          import users into your Firebase project from a data file(.csv or .json)&#10;  database:get [options] &lt;path&gt;                             fetch and print JSON data at the specified path&#10;  database:instances:create &lt;instanceName&gt;                  create a realtime database instance&#10;  database:instances:list                                   list realtime database instances&#10;  database:profile [options]                                profile the Realtime Database and generate a usage report&#10;  database:push [options] &lt;path&gt; [infile]                   add a new JSON object to a list of data in your Firebase&#10;  database:remove [options] &lt;path&gt;                          remove data from your Firebase at the specified path&#10;  database:set [options] &lt;path&gt; [infile]                    store JSON data at the specified path via STDIN, arg, or file&#10;  database:settings:get [options] &lt;path&gt;                    read the realtime database setting at path&#10;  database:settings:set [options] &lt;path&gt; &lt;value&gt;            set the realtime database setting at path.&#10;  database:update [options] &lt;path&gt; [infile]                 update some of the keys for the defined path in your Firebase&#10;  deploy [options]                                          deploy code and assets to your Firebase project&#10;  emulators:exec [options] &lt;script&gt;                         start the local Firebase emulators, run a test script, then shut down the emulators&#10;  emulators:start [options]                                 start the local Firebase emulators&#10;  experimental:functions:shell [options]                    launch full Node shell with emulated functions. (Alias for `firebase functions:shell.)&#10;  ext                                                       display information on how to use ext commands and extensions installed to your project&#10;  ext:configure [options] &lt;instanceId&gt;                      configure an existing extension instance&#10;  ext:info [options] &lt;extensionName&gt;                        display information about an extension by name (extensionName@x.y.z for a specific version)&#10;  ext:install [options] &lt;extensionName&gt;                     install an extension, given &lt;extensionName&gt; or &lt;extensionName@versionNumber&gt;&#10;  ext:list                                                  list all the extensions that are installed in your Firebase project&#10;  ext:uninstall [options] &lt;extensionInstanceId&gt;             uninstall an extension that is installed in your Firebase project by instance ID&#10;  ext:update &lt;instanceId&gt;                                   update an existing extension instance to the latest version&#10;  firestore:delete [options] [path]                         Delete data from Cloud Firestore.&#10;  firestore:indexes [options]                               List indexes in your project's Cloud Firestore database.&#10;  functions:config:clone [options]                          clone environment config from another project&#10;  functions:config:get [path]                               fetch environment config stored at the given path&#10;  functions:config:set [values...]                          set environment config with key=value syntax&#10;  functions:config:unset [keys...]                          unset environment config at the specified path(s)&#10;  functions:delete [options] [filters...]                   delete one or more Cloud Functions by name or group name.&#10;  functions:log [options]                                   read logs from deployed functions&#10;  functions:shell [options]                                 launch full Node shell with emulated functions&#10;  help [command]                                            display help information&#10;  hosting:disable [options]                                 stop serving web traffic to your Firebase Hosting site&#10;  init [feature]                                            setup a Firebase project in the current directory&#10;  list                                                      [DEPRECATED: use `projects:list`] list the Firebase projects you have access to&#10;  login [options]                                           log the CLI into Firebase&#10;  login:ci [options]                                        generate an access token for use in non-interactive environments&#10;  logout                                                    log the CLI out of Firebase&#10;  open [link]                                               quickly open a browser to relevant project resources&#10;  projects:addfirebase [projectId]                          add Firebase resources to a Google Cloud Platform project&#10;  projects:create [options] [projectId]                     create a new firebase project&#10;  projects:list                                             list all Firebase projects you have access to&#10;  serve [options]                                           start a local server for your static assets&#10;  setup:emulators:database                                  downloads the database emulator&#10;  setup:emulators:firestore                                 downloads the firestore emulator&#10;  setup:web                                                 [DEPRECATED: use `apps:sdkconfig web`] display this project's setup information for the Firebase JS SDK&#10;  target [type]                                             display configured deploy targets for the current project&#10;  target:apply &lt;type&gt; &lt;name&gt; &lt;resources...&gt;                 apply a deploy target to a resource&#10;  target:clear &lt;type&gt; &lt;target&gt;                              clear all resources from a named resource target&#10;  target:remove &lt;type&gt; &lt;resource&gt;                           remove a resource target&#10;  tools:migrate [options]                                   [DEPRECATED] ensure your firebase.json format is up to date&#10;  use [options] [alias_or_project_id]                       set an active Firebase project for your working directory&#10;' was 2 instead of 0.&#10;.&#10;sh: 1: Firebase: not found&#10;sh: 3: Options:: not found&#10;sh: 4: -V,: not found&#10;sh: 5: cannot open alias_or_project_id: No such file&#10;sh: 5: -P,: not found&#10;sh: 6: -j,: not found&#10;sh: 7: cannot open token: No such file&#10;sh: 7: --token: not found&#10;sh: 8: --non-interactive: not found&#10;sh: 9: --interactive: not found&#10;sh: 10: --debug: not found&#10;sh: 11: -h,: not found&#10;sh: 13: Commands:: not found&#10;sh: 14: cannot open distribution-file: No such file&#10;sh: 14: appdistribution:distribute: not found&#10;sh: 15: Syntax error: &quot;(&quot; unexpected&#10;" />
         
       </testcase>
     
