@@ -26,13 +26,13 @@ platform :android do
         flavor: "Dev",
         build_type: "Debug"
       )
-      # firebasePath = sh("")
-      # firebaseDirectory = sh("dirname #{firebasePath}")
+      firebasePath = sh("/usr/local/bin/firebase")
+      firebaseDirectory = sh("dirname #{firebasePath}")
       firebase_app_distribution(
           app: "1:159125261893:android:7a49ecce6208337bd21d2c",
           testers: "mail.nithinp@gmail.com",
           release_notes: "Lots of amazing new features to test out!",
-          firebase_cli_path: "/usr/local/bin/firebase",
+          firebase_cli_path: "#{firebaseDirectory}",
           apk_path: "./app/build/outputs/apk/dev/debug/app-dev-debug.apk"
           )
     # tag = "release-internal-v1.0.13"
