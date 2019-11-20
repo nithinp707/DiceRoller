@@ -18,12 +18,15 @@ defaults: &defaults
       name: Install Firebase Plgin
       command: fastlane add_plugin firebase_app_distribution
   - run:
-      name: Add firebase tools
+      name: Install firebase Tools
       command: curl -sL firebase.tools | bash
   - save_cache:
       paths:
       - ~/.gradle
       key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+  - run:
+      name: Danger install
+      command: bundle exec danger --fail-on-errors=true
   - run:
       name: Fastlane
       command: bundle exec fastlane $FASTLANE_LANE
