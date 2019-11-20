@@ -19,11 +19,11 @@ platform :android do
 
   desc "Submit a new Tester build to firebase app distribution.
   lane :internal do
-        gradle(task: "clean")
+        gradle(task: 'clean')
             gradle(
-              task: "assemble",
-              flavor: "Dev",
-              build_type: "Debug"
+              task: 'assemble',
+              flavor: 'Dev',
+              build_type: 'Debug'
             )
             end
   end
