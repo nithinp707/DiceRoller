@@ -28,7 +28,7 @@ defaults: &defaults
 jobs:
   deploy-internal:
     environment:
-      FASTLANE_LANE: dev
+      FASTLANE_LANE: internal
     <<: *defaults
 
 workflows:
