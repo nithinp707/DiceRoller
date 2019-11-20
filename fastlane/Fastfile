@@ -28,6 +28,7 @@ platform :android do
       )
       # firebasePath = sh("/usr/local/bin/firebase")
       # firebaseDirectory = sh("dirname #{firebasePath}")
+      puts sh("which firebase")
       firebase_app_distribution(
           app: "1:159125261893:android:7a49ecce6208337bd21d2c",
           testers: "mail.nithinp@gmail.com",
