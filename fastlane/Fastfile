@@ -25,5 +25,6 @@ platform :android do
               flavor: "Dev",
               build_type: "Debug"
             )
+            end
   end
 end
