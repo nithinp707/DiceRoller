@@ -26,6 +26,14 @@ platform :android do
         flavor: "Dev",
         build_type: "Debug"
       )
+      firebasePath = sh("/usr/local/bin/firebase")
+      firebaseDirectory = sh("dirname #{firebasePath}")
+      firebase_app_distribution(
+          app: "1:159125261893:android:7a49ecce6208337bd21d2c",
+          testers: "mail.nithinp@gmail.com",
+          release_notes: "Lots of amazing new features to test out!",
+          firebase_cli_path: "#{firebaseDirectory}"
+          )
     # tag = "release-internal-v1.0.13"
     # add_git_tag(tag: tag)
     # push_to_git_remote
