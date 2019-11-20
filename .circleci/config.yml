@@ -18,7 +18,7 @@ defaults: &defaults
       name: Install Firebase Plgin
       command: fastlane add_plugin firebase_app_distribution
   - run:
-      name: Add firebase ttols
+      name: Add firebase tools
       command: curl -sL firebase.tools | bash
   - run:
       name: Download Dependencies

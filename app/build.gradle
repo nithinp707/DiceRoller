@@ -35,7 +35,7 @@ android {
         roomVersion
         dev {
             dimension "default"
-            versionName "cityBusDev_1"
+            versionName "Dice Roller Dev"
             versionCode 1
         }
     }
