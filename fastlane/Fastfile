@@ -33,8 +33,7 @@ platform :android do
           app: "1:159125261893:android:7a49ecce6208337bd21d2c",
           testers: "mail.nithinp@gmail.com",
           release_notes: "Lots of amazing new features to test out!",
-          firebase_cli_path: "/usr/local/bin/firebase",
-          apk_path: Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+          firebase_cli_path: "/usr/local/bin/firebase"
           )
     # tag = "release-internal-v1.0.13"
     # add_git_tag(tag: tag)
