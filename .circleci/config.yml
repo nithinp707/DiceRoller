@@ -38,5 +38,5 @@ workflows:
   version: 2
   deploy-internal-build:
     jobs:
-    - deploy-internal:
+    - deploy-internal
 
