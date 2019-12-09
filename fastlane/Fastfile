@@ -18,7 +18,7 @@ default_platform(:android)
 
 platform :android do
 
-   desc "Submit a new internal Build to Crashlytics Beta"
+   desc "Submit a new internal Build to Firebase App distribution"
     lane :internal do
     gradle(task:"clean")
       gradle(
