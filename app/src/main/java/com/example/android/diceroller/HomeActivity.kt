@@ -3,7 +3,7 @@ package com.example.android.diceroller
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android.diceroller.trivia.TriviaHome
+import com.example.android.diceroller.trivia.TriviaHomeActivity
 import com.example.android.diceroller.aboutme.AboutMeActivity
 import com.example.android.diceroller.aboutme.MyViewsActivity
 import com.example.android.diceroller.diceroller.DiceActivity
@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         buttonTrivia.setOnClickListener {
-            startActivity(Intent(this, TriviaHome::class.java))
+            startActivity(Intent(this, TriviaHomeActivity::class.java))
         }
 
 

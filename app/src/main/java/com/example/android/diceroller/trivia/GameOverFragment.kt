@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -22,12 +23,19 @@ class GameOverFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding =
-            DataBindingUtil.inflate<FragmentGameOverBinding>(inflater, R.layout.fragment_game_over, container, false)
+            DataBindingUtil.inflate<FragmentGameOverBinding>(
+                inflater,
+                R.layout.fragment_game_over,
+                container,
+                false
+            )
 
         binding.tryAgainButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
+            it.findNavController()
+                .navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
         }
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.android_trivia)
         return binding.root
     }
-
 }

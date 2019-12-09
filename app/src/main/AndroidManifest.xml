@@ -24,7 +24,7 @@
         <activity android:name=".diceroller.DiceActivity" />
         <activity android:name=".aboutme.AboutMeActivity" />
         <activity android:name=".aboutme.MyViewsActivity" />
-        <activity android:name=".trivia.TriviaHome" />
+        <activity android:name=".trivia.TriviaHomeActivity" />
     </application>
 
 </manifest>
