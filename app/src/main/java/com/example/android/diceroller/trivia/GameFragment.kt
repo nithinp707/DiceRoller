@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.android.diceroller.R
 import com.example.android.diceroller.databinding.FragmentGameBinding
@@ -81,18 +83,24 @@ class GameFragment : Fragment() {
     private var questionIndex: Int = 0
     private val numQuestions = min((questions.size + 1) / 2, 3)
 
+    private lateinit var viewModel: GameViewModel
+    private lateinit var binding: FragmentGameBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding =
+        binding =
             DataBindingUtil.inflate<FragmentGameBinding>(
                 inflater,
                 R.layout.fragment_game,
                 container,
                 false
             )
+
+        //attach fragment with viewmodel
+        viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
         // Shuffles the questions and sets the question index to the first question.
         randomizeQuestions()
@@ -103,38 +111,68 @@ class GameFragment : Fragment() {
 
         //set the onClickListener for the submit button
         binding.submitButton.setOnClickListener {
-            val checkedId = binding.questionRadioGroup.checkedRadioButtonId
-            // Do nothing if nothing is checked (id == -1)
-            if (-1 != checkedId) {
-                var answerIndex = 0
-                when (checkedId) {
-                    R.id.secondAnswerRadioButton -> answerIndex = 1
-                    R.id.thirdAnswerRadioButton -> answerIndex = 2
-                    R.id.fourthAnswerRadioButton -> answerIndex = 3
-                }
-                // The first answer in the original question is always the correct one, so if our
-                // answer matches, we have the correct answer.
-                if (answers[answerIndex] == currentQuestion.answers[0]) {
-                    questionIndex++
-                    // Advance to the next question
-                    if (questionIndex < numQuestions) {
-                        currentQuestion = questions[questionIndex]
-                        setQuestion()
-                        binding.invalidateAll()
-                    } else {
-                        // We've won!  Navigate to the gameWonFragment.
-                        it.findNavController()
-                            .navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
-                    }
-                } else {
-                    // Game over! A wrong answer sends us to the gameOverFragment.
-                    it.findNavController()
-                        .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
-                }
-            }
+            submitButtonAction()
         }
 
         return binding.root
+    }
+
+    private fun submitButtonAction() {
+        val checkedId = binding.questionRadioGroup.checkedRadioButtonId
+        // Do nothing if nothing is checked (id == -1)
+        if (-1 != checkedId) {
+            var answerIndex = 0
+            when (checkedId) {
+                R.id.secondAnswerRadioButton -> answerIndex = 1
+                R.id.thirdAnswerRadioButton -> answerIndex = 2
+                R.id.fourthAnswerRadioButton -> answerIndex = 3
+            }
+            // The first answer in the original question is always the correct one, so if our
+            // answer matches, we have the correct answer.
+            if (answers[answerIndex] == currentQuestion.answers[0]) {
+                questionIndex++
+                // Advance to the next question
+                if (questionIndex < numQuestions) {
+                    currentQuestion = questions[questionIndex]
+                    setQuestion()
+                    binding.invalidateAll()
+                } else {
+                    // We've won!  Navigate to the gameWonFragment.
+                    binding.root.findNavController()
+                        .navigate(
+                            GameFragmentDirections.actionGameFragmentToGameWonFragment(
+                                numQuestions,
+                                questionIndex
+                            )
+                        )
+                }
+            } else {
+                // Game over! A wrong answer sends us to the gameOverFragment.
+                binding.root.findNavController()
+                    .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
+            }
+        } else {
+            questionIndex++
+            // Advance to the next question
+            currentQuestion = questions[questionIndex]
+            setQuestion()
+            binding.invalidateAll()
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.timerCount.observe(viewLifecycleOwner, Observer { timerText ->
+            binding.textTimer.text = timerText
+        })
+
+        viewModel.timerFinished.observe(viewLifecycleOwner, Observer { isFinished ->
+            if (isFinished) {
+                submitButtonAction()
+            }
+        })
+        viewModel.timerStart()
     }
 
     // randomize the questions and set the first question
