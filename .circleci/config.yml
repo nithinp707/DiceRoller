@@ -44,7 +44,7 @@ workflows:
       - deploy-internal:
           filters:
             tags:
-              only: /release\/diceroller-internal-.*/
+              only: /release-diceroller-internal-.*/
             branches:
               ignore: /.*/
 
