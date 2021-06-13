@@ -7,7 +7,7 @@ defaults: &defaults
     - image: circleci/android:api-29
   environment:
     JVM_OPTS: -Xmx3200m
-  steps:`
+  steps:
     - checkout
     - restore_cache:
         key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
@@ -41,10 +41,5 @@ workflows:
   version: 2
   deploy-internal-build:
     jobs:
-      - deploy-internal:
-          filters:
-            tags:
-              only: /release-diceroller-internal-.*/
-            branches:
-              ignore: /.*/
+      - deploy-internal
 
